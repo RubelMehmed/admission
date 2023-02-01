@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block content %}
+
+<center>
+  <h1>You Shall Find Yourself Here! ..</h1>
+  <h3>Approved Applicant List</h3>
+  <table class="table table-border table-hover">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Father Name</th>
+      <th>District</th>
+      <th>Email</th>
+      <th>Father Contact</th>
+      <th>Selected Course</th>
+    </tr>
+    {% for applicant in data %}
+    <tr>
+      <td>{{ applicant.applicant_id }}</td>
+      <td>{{ applicant.name }}</td>
+      <td>{{ applicant.father_name }}</td>
+      <td>{{ applicant.district }}</td>
+      <td>{{ applicant.email }}</td>
+      <td>{{ applicant.father_contact }}</td>
+      <td>{{ applicant.selected_course }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</center>
+{% endblock %}

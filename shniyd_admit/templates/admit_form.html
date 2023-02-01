@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% block content %}
+<center>
+  <h3>Choose Your Destined Trianing Course Here</h3>
+  <br />
+  <!--  apply here -->
+  <a href="{% url 'input_data' %}">Apply Here </a>
+  <br />
+  <!-- applicant list approved here -->
+  <a href="{% url 'data_display'  %}">Approved Applicant </a>
+  <br />
+  <!-- admit here -->
+  <a href="{% url 'admit' %}">Admit Here </a>
+</center>
+
+{% endblock %}

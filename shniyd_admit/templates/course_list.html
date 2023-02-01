@@ -1,0 +1,52 @@
+{% extends 'base.html' %} {% block content %}
+
+<center>
+{% for h in course_list %}
+<div class="card">
+  <div class="card-header">
+    {{ h }}
+    <hr />
+  </div>
+
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Course ID</th>
+      <th scope="col">Course Name</th>
+      <th scope="col">Duration</th>
+      <th scope="col">Prerequisite</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ h.id }}</td>
+      <th scope="row">{{ h.name }}</th>
+      <td>{{ h.duration }}</td>
+      <td>{{ h.dealine }}</td>
+      <td>{{ h.prerequisite }}</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <!-- <div class="card-body">
+    <h5 class="card-title"><i>Course Name: {{ h.name }}</i> </h5>
+    <p class="card-text">
+        <li><strong>Duration: {{ h.duration }}</strong></li>
+        <li><strong>Deadline: {{ h.dealine }}</strong></li>
+        <li><strong>Prerequisite: {{ h.prerequisite }}</strong></li>
+        <li><strong>Fee: {{ h.fee }}</strong> </li>
+<!-- 
+            <br/>{% for user in event.attendees.all %} 
+            <br/>{{ user }}{% endfor %} -->
+        </li>
+    </p>
+  </div> 
+</div>
+</br>
+{% endfor %}
+<br />
+   <span><a href="{% url 'input_data' %}" class="btn btn-primary">Apply here</a></span> 
+
+</center>
+{% endblock %}
