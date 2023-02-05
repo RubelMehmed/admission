@@ -1,6 +1,146 @@
 {% extends 'base.html' %} {% block content %}
-<center>
-  <h4>Welcome To Admission IT Centre</h4>
-  <h1>Sheikh Hasina National Institute Of Youth Development</h1>
-</center>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Sheikh Hasina National Institution of Youth Development</title>
+    <style>
+      body {
+        background-image: url(../static/images/sojibghas.jpg);
+        background-size: cover;
+        font-family: sans-serif;
+        color: #fff;
+        margin: 0;
+      }
+
+      header {
+        text-align: center;
+        padding: 50px;
+      }
+
+      h1 {
+        font-size: 2em;
+        font-weight: bold;
+        margin: 0;
+        color: #64f24e;
+        animation: title-animation 1s ease-in-out;
+      }
+
+      section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 100px);
+      }
+
+      .content {
+        text-align: center;
+        max-width: 800px;
+        animation: content-animation 1s ease-in-out;
+      }
+
+      h2 {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #0b0e70d1;
+      }
+
+      p {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+        color: #e7cee3;
+      }
+
+      .highlight {
+        color: #112690;
+        font-weight: bold;
+      }
+
+      a {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #0b011b;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        margin-top: 20px;
+        transition: all 0.2s ease-in-out;
+      }
+
+      a:hover {
+        cursor: pointer;
+        background-color: #3a1480;
+      }
+
+      @keyframes title-animation {
+        from {
+          transform: translateY(-50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes content-animation {
+        from {
+          transform: translateX(-50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Sheikh Hasina National Institution of Youth Development</h1>
+    </header>
+    <section>
+      <div class="content">
+        <h2>Admissions Open</h2>
+        <p>
+          Join the
+          <span class="highlight"
+            >Sheikh Hasina National Institution of Youth Development</span
+          >
+          and be a part of our mission to shape the future leaders of
+          Bangladesh.
+        </p>
+
+        <a href="{% url 'input_data' %}">Apply Now</a>
+      </div>
+    </section>
+  </body>
+</html>
 {% endblock %}
+
+<!-- <section>
+      
+        <p>
+          Join the
+          <span class="highlight"
+            >Sheikh Hasina National Institution of Youth Development</span
+          >
+          and be a part of our mission to shape the future leaders of
+          Bangladesh. Our institution is dedicated to fostering the growth and
+          development of young individuals, preparing them for success in their
+          future endeavors.
+        </p>
+        <p>
+          We offer a comprehensive curriculum designed to provide students with
+          the knowledge, skills, and confidence they need to succeed in their
+          chosen fields. Our experienced faculty and state-of-the-art facilities
+          ensure that students receive the highest quality education and
+          training.
+        </p>
+        <a href="#">Apply Now</a>
+     
+    </section> -->

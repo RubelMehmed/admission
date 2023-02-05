@@ -1,52 +1,91 @@
 {% extends 'base.html' %} {% block content %}
 
-<center>
-{% for h in course_list %}
-<div class="card">
-  <div class="card-header">
-    {{ h }}
-    <hr />
-  </div>
+<html>
+  <head>
+    <style>
+      .card {
+        width: 80%;
+        margin: 0 auto;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        overflow: hidden;
+        text-align: center;
+      }
 
-  <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Course ID</th>
-      <th scope="col">Course Name</th>
-      <th scope="col">Duration</th>
-      <th scope="col">Prerequisite</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>{{ h.id }}</td>
-      <th scope="row">{{ h.name }}</th>
-      <td>{{ h.duration }}</td>
-      <td>{{ h.dealine }}</td>
-      <td>{{ h.prerequisite }}</td>
-    </tr>
-    
-  </tbody>
-</table>
+      .card-header {
+        background-color: #f3ebf3;
+        padding: 30px;
+        font-size: 24px;
+        font-weight: bold;
+      }
 
-  <!-- <div class="card-body">
-    <h5 class="card-title"><i>Course Name: {{ h.name }}</i> </h5>
-    <p class="card-text">
-        <li><strong>Duration: {{ h.duration }}</strong></li>
-        <li><strong>Deadline: {{ h.dealine }}</strong></li>
-        <li><strong>Prerequisite: {{ h.prerequisite }}</strong></li>
-        <li><strong>Fee: {{ h.fee }}</strong> </li>
-<!-- 
-            <br/>{% for user in event.attendees.all %} 
-            <br/>{{ user }}{% endfor %} -->
-        </li>
-    </p>
-  </div> 
-</div>
-</br>
-{% endfor %}
-<br />
-   <span><a href="{% url 'input_data' %}" class="btn btn-primary">Apply here</a></span> 
+      table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+      }
 
-</center>
+      th,
+      td {
+        border: 1px solid #848da7;
+        padding: 8px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #c2bbd8;
+      }
+
+      .btn {
+        background-color: #6dcd19;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .btn:hover {
+        background-color: #3e8e41;
+      }
+    </style>
+  </head>
+  <body>
+    {% for h in course_list %}
+    <div class="card">
+      <div class="card-header">
+        {{ h }}
+        <hr />
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Course ID</th>
+            <th scope="col">Course Name</th>
+            <th scope="col">Duration</th>
+            <th scope="col">Deadline</th>
+            <th scope="col">Prerequisite</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ h.id }}</td>
+            <th>{{ h.name }}</th>
+            <td>{{ h.duration }}</td>
+            <td>{{ h.deadline }}</td>
+            <td>{{ h.prerequisite }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br />
+    {% endfor %}
+    <span><a href="{% url 'input_data' %}" class="btn">Apply here</a></span>
+  </body>
+</html>
+
 {% endblock %}

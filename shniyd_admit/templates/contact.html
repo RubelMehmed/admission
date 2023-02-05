@@ -1,8 +1,65 @@
 {% extends 'base.html' %} {% block content %}
 <center>
-  <h3>Stay Connected With Us<span>Courses</span>Follow Us</h1>
-  </h3>
-  <h6>Contact Here</h6>
+  <style>
+    .jumbotron {
+      background: linear-gradient(
+        to bottom right,
+        rgb(5, 5, 105),
+        rgb(2, 2, 30)
+      );
+      color: white;
+    }
+    .container {
+      background-color: #f7f6faee;
+      padding: 24px;
+      border-radius: 10px;
+      box-shadow: 2px 2px 5px rgb(15, 10, 53);
+    }
+    h3 {
+      color: navy;
+      font-weight: bold;
+    }
+    a {
+      color: blue;
+    }
+    h1 {
+      color: rgb(235, 235, 245);
+    }
+    .tab {
+      background-color: #9981dfee;
+    }
+  </style>
+
+  <div class="jumbotron text-center">
+    <h1 class="display-4">Contact Us</h1>
+  </div>
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-md-4 tab">
+        <h3>Address</h3>
+        <p>
+          Sheikh Hasina National Institute of Youth Development<br />
+          Dhaka-Aricha Highway, Savar, Dhaka
+        </p>
+      </div>
+      <div class="col-md-4 tab">
+        <h3>Phone</h3>
+        <p>+88-02-7792118</p>
+        <h3>Email</h3>
+        <p>
+          <a href="mailto:shnyc@dyd.gov.bd">shnyc@dyd.gov.bd</a>
+        </p>
+      </div>
+      <div class="col-md-4 tab">
+        <h3>Trianing Hours</h3>
+        <p>From 08:00 am to 05:00 pm (Sunday to Thursday)</p>
+        <h3>Web</h3>
+        <p>
+          <a href="http://shnyc.portal.gov.bd/">http://shnyc.portal.gov.bd/</a>
+        </p>
+      </div>
+    </div>
+  </div>
 </center>
 
 {% endblock %}

@@ -1,9 +1,12 @@
-from django.db import models
-from rest_framework import permissions
+# from django import forms
 from django.contrib.auth.models import User
-from django import forms
+from django.db import models
+
+# from rest_framework import permissions
 
 # Create your models here.
+
+#=================>Course Data >=====================#
 
 
 class Course(models.Model):
@@ -16,17 +19,18 @@ class Course(models.Model):
     def __str__(self):
         return self.name
 
-#=============> Applicant data <===================#
+#================> Applicant data <===================#
 
 
 class Applicant(models.Model):
     applicant_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
-    father_name = models.CharField(max_length=100)
-    district = models.CharField(max_length=100)
+   
     email = models.EmailField()
+    father_name = models.CharField(max_length=100)
     father_contact = models.CharField(max_length=100)
     selected_course = models.CharField(max_length=100)
+    district = models.CharField(max_length=100)
     show = models.BooleanField(default=False)
 
     def __str__(self):

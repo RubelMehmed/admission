@@ -1,14 +1,13 @@
 {% extends 'base.html' %} <br />
 {% block content %}
 <center>
-  <h3>Stay Connected With Us<span>Courses</span>Follow Us</h1>
-  </h3>
-  <h6>Apply Here</h6>
+  <link rel="stylesheet" href="./style.css" />
+  <h3>Apply Here</h3>
+
+  <!-- the orginal one here -->
   <form action="{% url 'update'  %}" method="post">
-  {% csrf_token %} {{ form.as_p }}
-  <button type="submit">Submit</button>
-</form>
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit">Submit</button>
+  </form>
 </center>
 {% endblock %}
-
-

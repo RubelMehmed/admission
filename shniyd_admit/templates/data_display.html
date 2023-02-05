@@ -1,29 +1,128 @@
 {% extends 'base.html' %} {% block content %}
 
+<html>
+  <head>
+    <style>
+      body {
+        background: linear-gradient(to bottom, #00b3b3, #80ffff);
+        padding: 20px;
+        font-family: Arial, sans-serif;
+      }
+
+      h1 {
+        color: blue;
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      h3 {
+        color: green;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      table {
+        background-color: #ddd;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      th,
+      td {
+        text-align: left;
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      tr:nth-child(even) {
+        background-color: #eee;
+      }
+
+      tr:hover {
+        background-color: #fff;
+      }
+
+      a {
+        color: green;
+        text-align: center;
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        background-color: #ddd;
+        border-radius: 5px;
+        text-decoration: none;
+      }
+
+      a:hover {
+        background-color: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>You Shall Find Yourself Here! ..</h1>
+    <h3>Approved Applicant List</h3>
+    <table class="table table-border table-hover">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <!-- <th>Qualification</th> -->
+        <th>Father Name</th>
+        <th>Father Contact</th>
+        <th>Selected Course</th>
+        <th>District</th>
+      </tr>
+      {% for applicant in data %}
+      <tr>
+        <td style="color: red">{{ applicant.applicant_id }}</td>
+        <td style="color: blue">{{ applicant.name }}</td>
+        <td style="color: green">{{ applicant.email }}</td>
+        <td style="color: blue">{{ applicant.father_name }}</td>
+        <td style="color: green">{{ applicant.father_contact }}</td>
+        <td style="color: red">{{ applicant.selected_course }}</td>
+        <td style="color: blue">{{ applicant.district }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <a href="{% url 'input_data' %}">Another Apply</a>
+  </body>
+</html>
+
+{% endblock %}
+
+<!-- THe previous code -->
+
+<!-- 
 <center>
-  <h1>You Shall Find Yourself Here! ..</h1>
-  <h3>Approved Applicant List</h3>
-  <table class="table table-border table-hover">
-    <tr>
+  <h1 style="color: blue">You Shall Find Yourself Here! ..</h1>
+  <h3 style="color: green">Approved Applicant List</h3>
+  <table class="table table-border table-hover" style="background-color: #ddd">
+    <tr style="background-color: #eee">
       <th>ID</th>
       <th>Name</th>
-      <th>Father Name</th>
-      <th>District</th>
       <th>Email</th>
+      <!-- <th>Qualification</th> -->
+<!-- <th>Father Name</th>
       <th>Father Contact</th>
       <th>Selected Course</th>
+      <th>District</th>
     </tr>
     {% for applicant in data %}
-    <tr>
-      <td>{{ applicant.applicant_id }}</td>
-      <td>{{ applicant.name }}</td>
-      <td>{{ applicant.father_name }}</td>
-      <td>{{ applicant.district }}</td>
-      <td>{{ applicant.email }}</td>
-      <td>{{ applicant.father_contact }}</td>
-      <td>{{ applicant.selected_course }}</td>
+    <tr style="background-color: #fff">
+      <td style="color: red">{{ applicant.applicant_id }}</td>
+      <td style="color: blue">{{ applicant.name }}</td>
+      <td style="color: green">{{ applicant.email }}</td>
+      <td style="color: blue">{{ applicant.father_name }}</td>
+      <td style="color: green">{{ applicant.father_contact }}</td>
+      <td style="color: red">{{ applicant.selected_course }}</td>
+      <td style="color: blue">{{ applicant.district }}</td>
     </tr>
     {% endfor %}
   </table>
-</center>
-{% endblock %}
+  <div style="text-align: center">
+    <br />
+    <!-- another apply here -->
+<!-- <a href="{% url 'input_data' %}" style="color: green">Another Apply </a>
+    <br />
+  </div>
+</center>  -->

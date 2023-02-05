@@ -1,15 +1,57 @@
 {% extends 'base.html' %} {% block content %}
 <center>
-  <h3>Choose Your Destined Trianing Course Here</h3>
-  <br />
-  <!--  apply here -->
-  <a href="{% url 'input_data' %}">Apply Here </a>
-  <br />
-  <!-- applicant list approved here -->
-  <a href="{% url 'data_display'  %}">Approved Applicant </a>
-  <br />
-  <!-- admit here -->
-  <a href="{% url 'admit' %}">Admit Here </a>
+  <div
+    class="container-fluid bg-cover align-items-center"
+    style="background-image: url('../static/images/male.jpg'); height: 110vh"
+  >
+    <div>
+      <h3 class="h1 text-warning">Choose Your Destined Trianing Course Here</h3>
+      <h6 class="text-primary text-bold">
+        Find the Perfect Course for Your Career Goals
+      </h6>
+      <br />
+      <br />
+    </div>
+    <!-- <div>
+      <h3 class="display-3 text-warning text-center mb-5">
+        Choose Your Destined Training Course
+      </h3>
+    </div> -->
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-sm-6 mb-3">
+          <a href="{% url 'input_data' %}" class="btn btn-lg btn-primary"
+            >Apply Here</a
+          >
+        </div>
+        <div class="col-sm-6 mb-3">
+          <a href="{% url 'data_display'  %}" class="btn btn-lg btn-primary"
+            >Approved Applicants</a
+          >
+        </div>
+        <div class="col-sm-12 mb-3">
+          <a href="{% url 'admit' %}" class="btn btn-lg btn-primary"
+            >Admit Here</a
+          >
+        </div>
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <p class="text-primary text-bold text-italic">
+        SNHIYD is the leading online platform for professional and personal
+        development. With courses in a variety of subjects, we make it easy to
+        find the right course for you. Whether you're looking to build new
+        skills or advance your career, we have the resources and support you
+        need to succeed. Our mission is to help people like you reach their full
+        potential by providing the best education possible.
+      </p>
+    </div>
+  </div>
 </center>
 
 {% endblock %}
