@@ -2,12 +2,126 @@
 {% block content %}
 <center>
   <link rel="stylesheet" href="./style.css" />
-  <h3>Apply Here</h3>
 
-  <!-- the orginal one here -->
+  <style>
+    h3 {
+      color: antiquewhite;
+      border-radius: 5px;
+      padding: 5px;
+      margin: 4px;
+      background-color: #3650d6;
+    }
+    form {
+      width: 60%;
+      margin: 0 auto;
+      padding: 30px;
+      background-color: #f7f7f7;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 2px 2px 10px #ddd;
+      text-align: center;
+    }
+
+    form p {
+      margin-bottom: 15px;
+    }
+
+    form label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;
+      color: #3650d6;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 2px 2px 10px #cfd6dc;
+      font-size: 16px;
+    }
+
+    form button[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #3039b2;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    form button[type="submit"]:hover {
+      background-color: #5e12a4;
+    }
+  </style>
+  <h3>Apply Here</h3>
   <form action="{% url 'update'  %}" method="post">
     {% csrf_token %} {{ form.as_p }}
     <button type="submit">Submit</button>
   </form>
+
+  <!-- <style>
+    form {
+      width: 50%;
+      margin: 0 auto;
+      padding: 30px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 2px 2px 10px #ddd;
+      text-align: center;
+    }
+
+    form p {
+      margin-bottom: 15px;
+    }
+
+    form label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    form button[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    form button[type="submit"]:hover {
+      background-color: #3e8e41;
+    }
+  </style> -->
+
+  <!-- 
+  <form action="{% url 'update'  %}" method="post">
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit">Submit</button>
+  </form> -->
+
+  <!-- the orginal one here -->
+  <!-- <form action="{% url 'update'  %}" method="post">
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit">Submit</button>
+  </form> -->
 </center>
 {% endblock %}

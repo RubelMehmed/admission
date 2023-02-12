@@ -1,22 +1,149 @@
 {% extends 'base.html' %} {% block content %}
+
 <center>
+  <style>
+    h3 {
+      color: #d7d5e4;
+      background-color: #ff9f43;
+      width: fit-content;
+      margin: 0 auto;
+      padding: 3px 15px;
+      border-radius: 6px;
+    }
+    h6 {
+      color: #f6f5f8;
+    }
+    p {
+      color: #c9c2d9;
+    }
+
+    .bg-aussie {
+      background: linear-gradient(to right, #130f40, #4834d4);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .btn-aussie {
+      background-color: #341f97;
+      border-color: #00bfff;
+      color: #c5d5e2;
+    }
+
+    .text-aussie {
+      color: #00bfff;
+    }
+  </style>
+
+  <div class="bg-aussie">
+    <div class="container-fluid text-center">
+      <h3 class="h1 font-weight-bold my-5">Choose Your Destined Course</h3>
+      <h6 class="h3 font-weight-bold">
+        Find the Perfect Training Course for Your Career Goals..
+      </h6>
+      <p class="font-weight-bold font-italic mb-5">
+        SNHIYD is the leading online platform for professional and personal
+        development. With courses in a variety of subjects, we make it easy to
+        find the right course for you. Whether you're looking to build new
+        skills or advance your career, we have the resources and support you
+        need to succeed. Our mission is to help people like you reach their full
+        potential by providing the best education possible.
+      </p>
+      <div class="row">
+        <div class="col-sm-6 mb-3">
+          <a href="{% url 'input_data' %}" class="btn btn-lg btn-aussie"
+            >Apply Here</a
+          >
+        </div>
+        <div class="col-sm-6 mb-3">
+          <a href="{% url 'data_display'  %}" class="btn btn-lg btn-aussie"
+            >Applicants</a
+          >
+        </div>
+        <div class="col-sm-12 mb-3">
+          <a href="{% url 'admit' %}" class="btn btn-lg btn-aussie"
+            >Admit Here</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- prevoius one -->
+  <!-- <style>
+    .btn-custom {
+      padding: 10px;
+      background-color: #be2edd !important;
+    }
+    h3 {
+      color: #d7d5e4;
+    }
+    h6 {
+      color: #5a4dec;
+    }
+  </style>
   <div
-    class="container-fluid bg-cover align-items-center"
-    style="background-image: url('../static/images/male.jpg'); height: 110vh"
+    class="d-flex align-items-center"
+    style="
+      background: linear-gradient(to right, #130f40, #4834d4);
+      height: 110vh;
+    "
+  >
+    <div class="text-center">
+      <h3 class="h1 font-weight-bold my-5">
+        Choose Your Destined Training Course
+      </h3>
+      <h6 class="h3 font-weight-bold">
+        Find the Perfect Course for Your Career Goals
+      </h6>
+      <p class="text-light font-weight-bold font-italic mb-5">
+        SNHIYD is the leading online platform for professional and personal
+        development. With courses in a variety of subjects, we make it easy to
+        find the right course for you. Whether you're looking to build new
+        skills or advance your career, we have the resources and support you
+        need to succeed. Our mission is to help people like you reach their full
+        potential by providing the best education possible.
+      </p>
+      <div class="row">
+        <div class="col-sm-6 mb-3">
+          <a
+            href="{% url 'input_data' %}"
+            class="btn btn-lg btn-custom text-white"
+            >Apply Here</a
+          >
+        </div>
+        <div class="col-sm-6 mb-3">
+          <a
+            href="{% url 'data_display'  %}"
+            class="btn btn-lg btn-custom text-white"
+            >Approved
+          </a>
+        </div>
+        <div class="col-sm-12 mb-3">
+          <a href="{% url 'admit' %}" class="btn btn-lg btn-custom text-white"
+            >Admit Here</a
+          >
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- previous one -->
+  <!-- <div
+    class="container-fluid d-flex align-items-center"
+    style="
+      background: linear-gradient(to right, #3f87a6, #ebf8e1);
+      height: 110vh;
+    "
   >
     <div>
-      <h3 class="h1 text-warning">Choose Your Destined Trianing Course Here</h3>
-      <h6 class="text-primary text-bold">
+      <h3 class="h1 text-dark">Choose Your Destined Training Course Here</h3>
+      <h6 class="text-secondary font-weight-bold">
         Find the Perfect Course for Your Career Goals
       </h6>
       <br />
       <br />
     </div>
-    <!-- <div>
-      <h3 class="display-3 text-warning text-center mb-5">
-        Choose Your Destined Training Course
-      </h3>
-    </div> -->
     <div class="container text-center">
       <div class="row">
         <div class="col-sm-6 mb-3">
@@ -26,8 +153,8 @@
         </div>
         <div class="col-sm-6 mb-3">
           <a href="{% url 'data_display'  %}" class="btn btn-lg btn-primary"
-            >Approved Applicants</a
-          >
+            >Approved
+          </a>
         </div>
         <div class="col-sm-12 mb-3">
           <a href="{% url 'admit' %}" class="btn btn-lg btn-primary"
@@ -42,7 +169,7 @@
       <br />
       <br />
 
-      <p class="text-primary text-bold text-italic">
+      <p class="text-secondary font-weight-bold font-italic">
         SNHIYD is the leading online platform for professional and personal
         development. With courses in a variety of subjects, we make it easy to
         find the right course for you. Whether you're looking to build new
@@ -51,7 +178,7 @@
         potential by providing the best education possible.
       </p>
     </div>
-  </div>
+  </div> -->
 </center>
 
 {% endblock %}

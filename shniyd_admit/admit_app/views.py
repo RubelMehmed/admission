@@ -1,9 +1,9 @@
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect, render
+
+from .forms import *
 from .models import *
 from .models import Applicant
-from .forms import *
-
 
 # Create your views here.
 
