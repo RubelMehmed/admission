@@ -1,34 +1,25 @@
 <style>
   .navbar {
-    background: linear-gradient(to right, #14045c, #02011f);
+    background-color: #3867d6;
   }
-
   .nav-item {
     color: white;
-    font-weight: bold;
-    padding: 1rem;
     text-align: center;
   }
 
-  .nav-item:hover {
-    background-color: rgba(131, 72, 247, 0.746);
-  }
-
   .navbar-brand img {
-    height: 40px;
-    width: 40px;
+    height: 55px;
+    width: 70px;
+  }
+  .fs {
+    font-size: 18px;
   }
 </style>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-dark px-5">
+  <div class="container">
     <a class="navbar-brand" href="{% url 'home' %}"
-      ><img
-        src="../static/images/logopro (3).jpeg "
-        alt="shniyd"
-        width="56px"
-        height="32px"
-        style="border-radius: 46%"
+      ><img src="../static/images/logo.png" alt="shniyd"
     /></a>
     <button
       class="navbar-toggler"
@@ -42,7 +33,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav ms-auto fs mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{% url 'home' %}"
             >Home</a

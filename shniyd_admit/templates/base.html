@@ -5,11 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>{% block title %}{% endblock %}</title>
-    <!-- <meta
-      charset="utf-8"
-      name="viewport"
-      content="width=device-width, initial-scale=1"
-    /> -->
 
     <!-- Bootstrap CSS -->
     <link
@@ -18,18 +13,11 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <!-- 
-    <title>HOME</title> -->
   </head>
   <body>
     {% include 'navbar.html' %}
 
-    <div class="">
-      {% block content %}
-      <h1>Admission Going On__</h1>
-
-      {% endblock %}
-    </div>
+    <div class="">{% block content %} {% endblock %}</div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 

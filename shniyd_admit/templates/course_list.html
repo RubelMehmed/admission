@@ -34,10 +34,12 @@
       }
 
       th {
-        background-color: #be2edd;
+        background-color: #3563ce !important;
+        color: white;
+        text-align: center;
       }
 
-      .btn {
+      /* .btn {
         background-color: #6dcd19;
         color: white;
         padding: 12px 20px;
@@ -47,7 +49,7 @@
         margin-top: 20px;
         font-size: 20px;
         font-weight: bold;
-      }
+      } */
 
       .btn:hover {
         background-color: #3e8e41;
@@ -55,14 +57,13 @@
     </style>
   </head>
   <body>
-    {% for h in course_list %}
     <div class="card">
-      <div class="card-header">
-        {{ h }}
-        <hr />
-      </div>
-
-      <table>
+      <span
+        ><a href="{% url 'input_data' %}" class="btn btn-primary mt-3"
+          >Apply here</a
+        ></span
+      >
+      <table class="table table-hover">
         <thead>
           <tr>
             <th scope="col">Course ID</th>
@@ -73,19 +74,19 @@
           </tr>
         </thead>
         <tbody>
+          {% for h in course_list %}
           <tr>
-            <td>{{ h.id }}</td>
-            <th>{{ h.name }}</th>
+            <td class="text-center">{{ h.id }}</td>
+            <td>{{ h.name }}</td>
             <td>{{ h.duration }}</td>
             <td>{{ h.deadline }}</td>
             <td>{{ h.prerequisite }}</td>
           </tr>
+          {% endfor %}
         </tbody>
       </table>
     </div>
     <br />
-    {% endfor %}
-    <span><a href="{% url 'input_data' %}" class="btn">Apply here</a></span>
   </body>
 </html>
 
