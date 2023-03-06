@@ -2,20 +2,45 @@
 
 <style>
   .home-section {
-    height: 95vh;
+    height: 88vh;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: url("");
+    background: url("../static/images/bg.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+  }
+  .home-section::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+  }
+
+  h2 {
+    font-size: 65px;
+    color: #fff;
+    text-shadow: 3px 3px 1px blue;
+  }
+  .content {
+    margin-top: -100px;
   }
 </style>
 
 <section class="home-section">
   <div class="content">
     <h2>Admissions Open</h2>
-    <p>
+    <p class="fs-5 px-5 mx-5 text-light">
       Join the
       <span class="highlight">
         Sheikh Hasina National Institution of Youth Development
@@ -23,7 +48,7 @@
       and be a part of our mission to shape the future leaders of Bangladesh.
     </p>
 
-    <a href="{% url 'input_data' %}">Apply Now</a>
+    <a class="btn btn-primary fs-5" href="{% url 'input_data' %}">Apply Now</a>
   </div>
 </section>
 

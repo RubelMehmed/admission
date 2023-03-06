@@ -4,66 +4,124 @@
     .jumbotron {
       background-color: #0b3d91;
       color: white;
+      /* height: 84vh;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center; */
     }
     h1 {
-      color: #0b3d91;
+      color: white;
+      background-color: rgba(0, 0, 255, 0.9);
       font-weight: bold;
+      font-size: 43px;
       text-align: center;
-      margin-bottom: 50px;
+      font-style: normal;
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+    }
+    #about {
+      color: blue;
+    }
+    h4,
+    h5 {
+      color: white;
+      background-color: rgba(0, 0, 255, 0.9);
+      width: fit-content;
+      padding: 5px;
+      text-align: center;
+      font-weight: 600px;
+      font-size: 22px;
+      font-variant-ligatures: contextual;
+    }
+    #context {
+      margin-bottom: -50px;
+    }
+    .allcontent {
+      background-image: linear-gradient(to right, #130f40, #4834d4);
+    }
+    #hi {
+      font-size: larger;
+      font-weight: 500;
+      font-style: italic;
+      font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     }
     p {
-      color: #333;
+      color: white;
       font-size: 18px;
       line-height: 1.5;
       text-align: justify;
-      margin-bottom: 50px;
+      margin-bottom: 20px;
     }
-    .btn-info {
-      background-color: #0b3d91;
-      border-color: #0b3d91;
-      color: white;
+    .param {
+      padding-top: 26px;
+    }
+    .btn {
+      background-color: rgb(20, 9, 52);
+      border-color: rgb(67, 22, 192);
+      color: rgb(255, 255, 255);
       font-weight: bold;
       text-align: center;
-      margin-top: 50px;
+      margin: 16px;
+      text-decoration: none;
+    }
+    .content {
+      padding-top: 300px;
     }
   </style>
+  <div class="">
+    <div
+      class="jumbotron bg-cover align-items-center"
+      style="
+        background-image: url('../static/images/sojibghas.jpg');
+        height: 86vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+      "
+    >
+      <div class="content container">
+        <h1 class="headline">
+          Sheikh Hasina National Institute of Youth Development
+        </h1>
+        <h4>Ministry of Youth and Sports</h4>
+        <h5>Savar, Dhaka</h5>
+      </div>
+    </div>
 
-  <div
-    class="jumbotron bg-cover d-flex align-items-center"
-    style="background-image: url('../static/images/mosque.jpg'); height: 50vh"
-  >
-    <h1 class="text-center text-bold text-white display-4">The Institute</h1>
-  </div>
-  <div class="container my-5">
-    <h1>Sheikh Hasina National Institute of Youth Development</h1>
-    <p class="text-justify">
-      The Sheikh Hasina National Institute of Youth Development is a premier
-      youth development organization in Bangladesh, dedicated to empowering the
-      youth and helping them achieve their full potential. With a focus on
-      leadership development, skills training, and community engagement, the
-      Institute has been making a positive impact on the lives of young people
-      for over two decades. Our mission is to create a world where young people
-      are equipped and motivated to lead, serve, and make a difference in their
-      communities.
-    </p>
-    <p>
-      Sheikh Hasina National Institute of Youth Development (SHNIYD) is a
-      premier institution dedicated to the development and empowerment of youth
-      in Bangladesh. Established in the year 2017, the institute has been at the
-      forefront of creating opportunities and providing support for young
-      individuals to reach their full potential.
-    </p>
-    <p>
-      SHNIYD offers a wide range of programs and services aimed at promoting
-      youth development and leadership, including training and capacity
-      building, career counseling, and mentorship opportunities. With a focus on
-      innovation and sustainability, the institute is committed to creating a
-      positive impact in the lives of young people and the communities they
-      serve.
-    </p>
-    <button class="btn btn-info">
-      <a href="{% url 'contact' %}">Contact Us </a>
-    </button>
+    <div id="context" class="allcontent container-fluid">
+      <div class="param">
+        <p class="text-justify px-5">
+          The
+          <span id="hi"
+            ><b>Sheikh Hasina National Institute of Youth Development</b></span
+          >
+          is a premier youth development organization in Bangladesh, dedicated
+          to empowering the youth and helping them achieve their full potential.
+          With a focus on leadership development, skills training, and community
+          engagement, the Institute has been making a positive impact on the
+          lives of young people for over two decades. Our mission is to create a
+          world where young people are equipped and motivated to lead, serve,
+          and make a difference in their communities.
+        </p>
+        <p class="px-5">
+          Sheikh Hasina National Institute of Youth Development (SHNIYD) is a
+          premier institution dedicated to the development and empowerment of
+          youth in Bangladesh. Established in the year 2017, the institute has
+          been at the forefront of creating opportunities and providing support
+          for young individuals to reach their full potential.
+        </p>
+        <p class="px-5">
+          SHNIYD offers a wide range of programs and services aimed at promoting
+          youth development and leadership, including training and capacity
+          building, career counseling, and mentorship opportunities. With a
+          focus on innovation and sustainability, the institute is committed to
+          creating a positive impact in the lives of young people and the
+          communities they serve.
+        </p>
+
+        <a class="btn btn-primary" href="{% url 'contact' %}">Contact Us </a>
+      </div>
+    </div>
   </div>
 </center>
 {% endblock %}

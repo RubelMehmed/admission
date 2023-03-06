@@ -1,134 +1,80 @@
 {% extends 'base.html' %} {% block content %}
 
-<html>
-  <head>
-    <style>
-      body {
-        background: linear-gradient(to bottom, #c4c4c6, #c7cbcb);
-        padding: 20px;
-        font-family: Arial, sans-serif;
-      }
+<div class="container">
+  <style>
+    h1 {
+      color: blue;
+      text-align: center;
+    }
 
-      h1 {
-        color: blue;
-        text-align: center;
-        margin-bottom: 50px;
-      }
+    h3 {
+      color: green;
+      text-align: center;
+      margin-bottom: 20px;
+    }
 
-      h3 {
-        color: green;
-        text-align: center;
-        margin-bottom: 20px;
-      }
+    table {
+      background-color: #ddd;
+      border-collapse: collapse;
+      width: 100%;
+    }
 
-      table {
-        background-color: #ddd;
-        border-collapse: collapse;
-        width: 100%;
-      }
+    th,
+    td {
+      text-align: left;
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+    }
 
-      th,
-      td {
-        text-align: left;
-        padding: 8px;
-        border-bottom: 1px solid #ddd;
-      }
+    tr:nth-child(even) {
+      background-color: #eee;
+    }
 
-      tr:nth-child(even) {
-        background-color: #eee;
-      }
+    tr:hover {
+      background-color: #ffffff;
+    }
 
-      tr:hover {
-        background-color: #ffffff;
-      }
+    #another-apply {
+      background-color: #3039b2;
 
-      a {
-        background-color: #3039b2;
+      cursor: pointer;
+      font-size: 18px;
+      color: rgb(218, 236, 247);
+      text-align: center;
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+  </style>
 
-        cursor: pointer;
-        font-size: 18px;
-        color: rgb(218, 236, 247);
-        text-align: center;
-        display: block;
-        margin: 20px auto;
-        padding: 10px 20px;
-        border-radius: 5px;
-      }
-
-      a:hover {
-        background-color: #1e0964;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>You Shall Find Yourself Here! ..</h1>
-    <h3>Approved Applicant List</h3>
-    <table class="table table-border table-hover">
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Email</th>
-        <!-- <th>Qualification</th> -->
-        <th>Father Name</th>
-        <th>Father Contact</th>
-        <th>Selected Course</th>
-        <th>District</th>
-      </tr>
-      {% for applicant in data %}
-      <tr>
-        <td style="color: rgb(235, 167, 56)">{{ applicant.applicant_id }}</td>
-        <td style="color: blue">{{ applicant.name }}</td>
-        <td style="color: rgba(201, 142, 25, 0.641)">{{ applicant.email }}</td>
-        <td style="color: blue">{{ applicant.father_name }}</td>
-        <td style="color: rgba(201, 142, 25, 0.641)">
-          {{ applicant.father_contact }}
-        </td>
-        <td style="color: blue">{{ applicant.selected_course }}</td>
-        <td style="color: rgba(201, 142, 25, 0.641)">
-          {{ applicant.district }}
-        </td>
-      </tr>
-      {% endfor %}
-    </table>
-    <a href="{% url 'input_data' %}">Another Apply</a>
-  </body>
-</html>
-
-{% endblock %}
-
-<!-- THe previous code -->
-
-<!-- 
-<center>
-  <h1 style="color: blue">You Shall Find Yourself Here! ..</h1>
-  <h3 style="color: green">Approved Applicant List</h3>
-  <table class="table table-border table-hover" style="background-color: #ddd">
-    <tr style="background-color: #eee">
+  <h1 class="pt-5 pb-3">You Shall Find Yourself Here! ..</h1>
+  <h3>Approved Applicant List</h3>
+  <table class="table table-border table-hover">
+    <tr>
       <th>ID</th>
       <th>Name</th>
       <th>Email</th>
-      <!-- <th>Qualification</th> -->
-<!-- <th>Father Name</th>
+      <th>Father Name</th>
       <th>Father Contact</th>
       <th>Selected Course</th>
       <th>District</th>
     </tr>
     {% for applicant in data %}
-    <tr style="background-color: #fff">
-      <td style="color: red">{{ applicant.applicant_id }}</td>
+    <tr>
+      <td style="color: rgb(235, 167, 56)">{{ applicant.applicant_id }}</td>
       <td style="color: blue">{{ applicant.name }}</td>
-      <td style="color: green">{{ applicant.email }}</td>
+      <td style="color: rgba(201, 142, 25, 0.641)">{{ applicant.email }}</td>
       <td style="color: blue">{{ applicant.father_name }}</td>
-      <td style="color: green">{{ applicant.father_contact }}</td>
-      <td style="color: red">{{ applicant.selected_course }}</td>
-      <td style="color: blue">{{ applicant.district }}</td>
+      <td style="color: rgba(201, 142, 25, 0.641)">
+        {{ applicant.father_contact }}
+      </td>
+      <td style="color: blue">{{ applicant.selected_course }}</td>
+      <td style="color: rgba(201, 142, 25, 0.641)">{{ applicant.district }}</td>
     </tr>
     {% endfor %}
   </table>
-  <div style="text-align: center">
-    <br />
-    <!-- another apply here -->
-<!-- <a href="{% url 'input_data' %}" style="color: green">Another Apply </a>
-    <br />
-  </div>
-</center>  -->
+  <a id="another-apply" href="{% url 'input_data' %}">Another Apply</a>
+</div>
+
+{% endblock %}

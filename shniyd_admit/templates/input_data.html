@@ -1,8 +1,5 @@
-{% extends 'base.html' %} <br />
-{% block content %}
-<center>
-  <link rel="stylesheet" href="./style.css" />
-
+{% extends 'base.html' %} {% block content %}
+<!-- 
   <style>
     h3 {
       color: antiquewhite;
@@ -15,10 +12,10 @@
       width: 60%;
       margin: 0 auto;
       padding: 30px;
-      background-color: #f7f7f7;
-      border: 1px solid #ddd;
+      background-color: #fafcfe;
+      border: 1px solid #290cbc;
       border-radius: 10px;
-      box-shadow: 2px 2px 10px #ddd;
+      box-shadow: 2px 2px 10px #3324bd;
       text-align: center;
     }
 
@@ -59,12 +56,35 @@
     form button[type="submit"]:hover {
       background-color: #5e12a4;
     }
+  </style> -->
+
+  <style>
+    .form-div{
+      background: #0984e3;
+      color: white;
+      width: 45%;
+      border-radius: 10px;
+      box-shadow: 20px 20px 30px -20px black;
+    }
+    #id_name, #id_email, #id_selected_course, #id_father_name, #id_father_contact, #id_district{
+      display: block;
+      width: 100%;
+      padding: 2px;
+      border: 1px solid rgb(126, 124, 124);
+      border-radius: 5px;
+    }
+    label{
+      font-size: 17px;
+    }
   </style>
-  <h3>Apply Here</h3>
-  <form action="{% url 'update'  %}" method="post">
-    {% csrf_token %} {{ form.as_p }}
-    <button type="submit">Submit</button>
-  </form>
+<div class="container d-flex justify-content-center mt-3">
+  <div class="form-div px-5 py-3">
+    <form action="{% url 'update'  %}" method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <button class="btn btn-success" type="submit">Submit</button>
+    </form>
+  </div>
+</div>
 
   <!-- <style>
     form {

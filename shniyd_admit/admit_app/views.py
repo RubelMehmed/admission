@@ -69,7 +69,7 @@ def input_data(request):
 
 
 def data_display(request):
-    data = Applicant.objects.filter(show=True)
+    data = Applicant.objects.all()
     return render(request, 'data_display.html', {'data': data})
 
 
